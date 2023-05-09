@@ -1,0 +1,78 @@
+import styled from "styled-components";
+import Button from "../Button";
+
+const MainSection = ({ image, headline, desc, onClick, text }) => {
+  return (
+    <SectionContainer>
+      <figure>
+        <img alt="main-image" src={image} />
+      </figure>
+      <div className="main-content">
+        <h1>{headline}</h1>
+        <h5>{desc}</h5>
+        <div className="button-wrapper">
+          <Button color="main" text={text} onClick={onClick} />
+        </div>
+      </div>
+    </SectionContainer>
+  );
+};
+
+const SectionContainer = styled.section`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  overflow: hidden;
+
+  figure {
+    width: auto;
+    height: 100vh;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .main-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40.6716666667vw;
+    padding: 0 0 56px;
+    padding-left: 4.44vw;
+
+    h1 {
+      padding: 0 0 32px;
+      color: #fff;
+      font-size: 5.3333333333rem;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 0.01rem;
+      text-transform: uppercase;
+      text-shadow: 0px 10px 10px rgba(32, 32, 43, 0.2);
+    }
+
+    h5 {
+      color: #fff;
+      font-size: 1.3333333333rem;
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: -0.01rem;
+    }
+
+    .button-wrapper {
+      display: flex;
+      width: 250px;
+      margin-top: 5%;
+    }
+
+    div + div {
+      margin-left: 20px;
+    }
+  }
+`;
+
+export default MainSection;

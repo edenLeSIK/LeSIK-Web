@@ -31,6 +31,7 @@ const Home = () => {
         건강식단, makeat"
         onClick={navigateToMakeatPage}
         text="makeat 구매하기"
+        color="yellow"
       />
       <SubContent
         label="Franchises & Businesses"

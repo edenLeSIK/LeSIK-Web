@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { white } from "../../theme";
 import Button from "../Button";
 
 const MainSection = ({ image, headline, desc, onClick, text, color }) => {
@@ -11,7 +12,7 @@ const MainSection = ({ image, headline, desc, onClick, text, color }) => {
         <h1>{headline}</h1>
         <h5>{desc}</h5>
         <div className="button-wrapper">
-          <Button color={color} text={text} onClick={onClick} />
+          {text && <Button color={color} text={text} onClick={onClick} />}
         </div>
       </div>
     </SectionContainer>
@@ -46,7 +47,7 @@ const SectionContainer = styled.section`
 
     h1 {
       padding: 0 0 32px;
-      color: #fff;
+      color: ${white};
       font-size: 5.3333333333rem;
       font-weight: 700;
       line-height: 1;
@@ -56,7 +57,7 @@ const SectionContainer = styled.section`
     }
 
     h5 {
-      color: #fff;
+      color: ${white};
       font-size: 1.3333333333rem;
       font-weight: 400;
       line-height: 1.5;
@@ -66,7 +67,15 @@ const SectionContainer = styled.section`
     .button-wrapper {
       display: flex;
       width: 250px;
-      margin-top: 5%;
+      margin-top: 10%;
+
+      .download-button {
+        width: 200px;
+      }
+
+      img + img {
+        margin-left: 50px;
+      }
     }
 
     div + div {

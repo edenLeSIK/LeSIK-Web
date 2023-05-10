@@ -13,7 +13,9 @@ const AdsContent = () => {
   return (
     <ContentContainer>
       <div className="content-wrapper">
-        <h2 className="headline">Ready to Makeat your kitchen?</h2>
+        <h2 className="headline">
+          Ready to <br /> Makeat <br /> your kitchen?
+        </h2>
         <Button
           text="바로 참여하기"
           color="yellow"

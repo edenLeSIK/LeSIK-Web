@@ -30,16 +30,18 @@ const Step = () => {
 
   return (
     <StepContainer>
-      {options.map((option, i) => (
-        <div
-          key={i}
-          className={`option ${option ? "active" : ""}`}
-          onClick={() => selectOption(i)}
-        >
-          <img alt="icon" src={fridge} />
-          <span>fridge</span>
-        </div>
-      ))}
+      <div className="step">
+        {options.map((option, i) => (
+          <div
+            key={i}
+            className={`option ${option ? "active" : ""}`}
+            onClick={() => selectOption(i)}
+          >
+            <img alt="icon" src={fridge} />
+            <span>냉장고</span>
+          </div>
+        ))}
+      </div>
       <div className="button-wrapper">
         <Button text="next" color="yellow" disabled={isButtonDisabled} />
       </div>
@@ -49,51 +51,56 @@ const Step = () => {
 
 const StepContainer = styled.div`
   display: flex;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: stretch;
-  align-items: stretch;
-  -webkit-justify-content: center;
-  justify-content: center;
-  padding: 48px 0;
-  flex-wrap: wrap;
-  margin: 0px auto;
-  padding-left: 15.5566666667vw;
-  padding-right: 15.5566666667vw;
+  flex-direction: column;
+  align-items: center;
 
-  .option {
-    display: -webkit- flex;
+  .step {
     display: flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-align-items: center;
-    align-items: center;
+    flex-direction: row;
+    -webkit-align-items: stretch;
+    align-items: stretch;
     -webkit-justify-content: center;
     justify-content: center;
-    width: 164px;
-    height: 164px;
-    margin: 16px;
-    border: 1px solid #9797a1;
-    border-radius: 16px;
-    cursor: pointer;
+    padding: 48px 0;
+    flex-wrap: wrap;
+    margin: 0px auto;
+    padding-left: 15.5566666667vw;
+    padding-right: 15.5566666667vw;
 
-    img {
-      width: 2rem;
+    .option {
+      display: -webkit- flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      -webkit-align-items: center;
+      align-items: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      width: 164px;
+      height: 164px;
+      margin: 16px;
+      border: 1px solid #9797a1;
+      border-radius: 16px;
+      cursor: pointer;
+
+      img {
+        width: 2rem;
+      }
+
+      span {
+        margin-top: 20px;
+        font-size: 0.6666666667rem;
+      }
     }
 
-    span {
-      margin-top: 20px;
-      font-size: 0.6666666667rem;
+    .option:hover {
+      border: 1px solid ${purple};
     }
-  }
 
-  .option:hover {
-    border: 1px solid ${purple};
-  }
-
-  .active {
-    background: ${lightPurple};
-    border: none;
+    .active {
+      background: ${lightPurple};
+      border: none;
+    }
   }
 
   .button-wrapper {

@@ -10,12 +10,12 @@ import {
   orange,
   orangeHover,
   black,
-  gray,
 } from "../../theme";
 
-const Button = ({ text, color, onClick, disabled }) => {
+const Button = ({ icon, text, color, onClick, disabled }) => {
   return (
     <ButtonContainer color={color} onClick={onClick} disabled={disabled}>
+      {icon}
       {text}
     </ButtonContainer>
   );

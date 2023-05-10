@@ -7,6 +7,7 @@ import Makeat from "./pages/Makeat";
 import Customer from "./pages/Customer";
 import Franchise from "./pages/Franchise";
 import Inquiry from "./pages/FranchiseInquiry";
+import LeSik from "./pages/Lesik";
 import * as theme from "./theme";
 import GlobalStyle from "./GlobalStyle";
 
@@ -20,7 +21,7 @@ function App() {
         <Route path="/makeat" element={<Makeat />} />
         <Route path="/customer" element={<Customer />} />
         <Route path="/franchise" element={<Franchise />} />
-        <Route path="/lesik" />
+        <Route path="/lesik" element={<LeSik />} />
         <Route path="/inquiry" element={<Inquiry />} />
       </Routes>
       <Footer />

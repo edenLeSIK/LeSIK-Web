@@ -1,20 +1,33 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import MainContent from "../../components/MainContent";
-import Banner from "../../components/FigureBanner";
 import SubContent from "../../components/SubContent";
 import AppGuide from "../../components/AppGuide";
-import kitchen from "../../assets/kitchen.png";
-import serve from "../../assets/serve.png";
+import food from "../../assets/food3.png";
 
 const Customer = () => {
+  const navigate = useNavigate();
+
+  const navigateToMakeatPage = () => {
+    navigate("/makeat");
+  };
+
   return (
     <CustomerContainer>
       <MainContent
-        image={serve}
-        headline="makeat 구매 링크 구글 플레이 앱스토어"
-        text="makeat 구매하기"
+        image={food}
+        headline={
+          <>
+            This is
+            <br /> makeat
+          </>
+        }
+        text="makeat 다운로드"
+        onClick={navigateToMakeatPage}
         color="pink"
       />
+      <SubContent label="you all makeat" headline="ddd" />
+      <SubContent color="on" label="you all makeat" headline="ddd" />
       <AppGuide />
     </CustomerContainer>
   );

@@ -1,10 +1,18 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
-import Button from "../../components/Button";
 import { navList } from "../../constants/nav";
 import logo from "../../assets/cooksup_logo.png";
-import { black, white, gray, main } from "../../theme";
+import {
+  black,
+  white,
+  gray,
+  main,
+  purple,
+  orange,
+  yellow,
+  darkGray,
+} from "../../theme";
 
 const Header = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -28,10 +36,6 @@ const Header = () => {
       ? "0px 5px 10px rgba(0, 0, 0, 0.1)"
       : "none";
 
-  const redirectToExternalPage = () => {
-    window.location.href = "http://www.cooksup.co.kr/";
-  };
-
   return (
     <HeaderContainer
       bgColor={bgColor}
@@ -49,11 +53,6 @@ const Header = () => {
             </li>
           ))}
         </ul>
-        {/* <Button
-          text="makeat 구매하기"
-          color="main"
-          onClick={redirectToExternalPage}
-        /> */}
       </div>
     </HeaderContainer>
   );
@@ -103,7 +102,7 @@ const HeaderContainer = styled.nav`
       }
 
       li > a:hover {
-        color: ${main};
+        color: ${darkGray};
         font-size: 1.125rem;
         font-weight: 700;
       }
@@ -111,20 +110,6 @@ const HeaderContainer = styled.nav`
       li + li {
         margin-left: 30px;
       }
-    }
-
-    .link-button {
-      width: 150px;
-      padding: 13px;
-      border-radius: 20px;
-      background: #00b590;
-      text-align: center;
-      vertical-align: middle;
-      cursor: pointer;
-    }
-
-    .link-button:hover {
-      background: lightgray;
     }
   }
 `;

@@ -4,7 +4,7 @@ import News from "../News";
 import Content from "../AdsContent";
 import { white } from "../../theme";
 
-let a = [1, 2, 3, 4];
+let a = [1, 2, 3];
 
 const Feed = () => {
   return (

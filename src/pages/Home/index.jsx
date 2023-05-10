@@ -5,7 +5,7 @@ import SubContent from "../../components/SubContent";
 import Feed from "../../components/Feed";
 import AdsContent from "../../components/AdsContent";
 import consult from "../../assets/consult.png";
-import food from "../../assets/food.png";
+import food from "../../assets/food2.png";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -23,15 +23,17 @@ const Home = () => {
   return (
     <HomeContainer>
       <MainContent
-        image={consult}
-        headline="당신에게 맞춘 건강식단, makeat"
-        desc="당신에게 맞춘 건강식단, makeat 당신에게 맞춘 건강식단, makeat 당신에게
-        맞춘 건강식단, makeat 당신에게 맞춘 건강식단, makeat 당신에게 맞춘
-        건강식단, makeat 당신에게 맞춘 건강식단, makeat 당신에게 맞춘
-        건강식단, makeat"
+        image={food}
+        headline={
+          <>
+            당신에게
+            <br /> 맞춘 <br /> 건강식단, <br /> makeat
+          </>
+        }
+        desc="안녕하세요 여러분 makeat 구매해주시죠"
         onClick={navigateToMakeatPage}
         text="makeat 구매하기"
-        color="yellow"
+        color="orange"
       />
       <SubContent
         label="Franchises & Businesses"

@@ -16,7 +16,11 @@ const Franchise = () => {
     <FranchiseContainer>
       <MainContent
         image={kitchen}
-        headline="여기는 Franchise에게 안내하는 페이지"
+        headline={
+          <>
+            Franchise 여러분에게 <br /> 안내하는
+          </>
+        }
         text="입점 신청하기"
         onClick={navigateToInquiryPage}
         color="orange"

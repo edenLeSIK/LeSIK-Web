@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Button from "../Button";
+import { orange, white } from "../../theme";
 
 const AdsContent = () => {
   const navigate = useNavigate();
@@ -39,13 +40,13 @@ const ContentContainer = styled.section`
     padding: 120px 0;
     border-radius: 24px;
     overflow: hidden;
-    background: #ff6e40;
+    background: ${orange};
 
     .headline {
       width: 44.45vw;
       margin: 32px 0;
       text-align: center;
-      color: #fff;
+      color: ${white};
       font-size: 5rem;
       font-weight: 700;
       line-height: 0.95;

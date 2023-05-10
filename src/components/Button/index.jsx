@@ -1,20 +1,31 @@
 import styled from "styled-components";
-import { main, mainHover, purple, yellow } from "../../theme";
+import {
+  main,
+  mainHover,
+  vividPink,
+  pinkHover,
+  purple,
+  yellow,
+  yellowHover,
+  orange,
+  orangeHover,
+  black,
+  gray,
+} from "../../theme";
 
-const Button = ({ text, color, onClick }) => {
+const Button = ({ text, color, onClick, disabled }) => {
   return (
-    <ButtonContainer color={color} onClick={onClick}>
+    <ButtonContainer color={color} onClick={onClick} disabled={disabled}>
       {text}
     </ButtonContainer>
   );
 };
 
-const ButtonContainer = styled.div`
+const ButtonContainer = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
   min-width: 190px;
-  height: 20px;
   padding: 15px 20px;
   font-size: 1rem;
   font-weight: 700;
@@ -22,14 +33,31 @@ const ButtonContainer = styled.div`
   background: ${(props) => props.color === "main" && `${main}`};
   background: ${(props) => props.color === "purple" && "transparent"};
   background: ${(props) => props.color === "yellow" && `${yellow}`};
+  background: ${(props) => props.color === "pink" && `${vividPink}`};
+  background: ${(props) => props.color === "orange" && `${orange}`};
   border: ${(props) => props.color === "purple" && `1px solid ${purple}`};
-
   border-radius: 54px;
+  transition: all ease 0.2s;
 
   &:hover {
     background: ${(props) => props.color === "main" && `${mainHover}`};
     background: ${(props) => props.color === "purple" && `${purple}`};
+    background: ${(props) => props.color === "yellow" && `${yellowHover}`};
+    background: ${(props) => props.color === "pink" && `${pinkHover}`};
+    background: ${(props) => props.color === "orange" && `${orangeHover}`};
     cursor: pointer;
+  }
+
+  &:disabled {
+    background: ${(props) => props.color === "main" && `${main}`};
+    background: ${(props) => props.color === "purple" && "transparent"};
+    background: ${(props) => props.color === "yellow" && `${yellow}`};
+    background: ${(props) => props.color === "pink" && `${vividPink}`};
+    background: ${(props) => props.color === "orange" && `${orange}`};
+    border: ${(props) => props.color === "purple" && `1px solid ${purple}`};
+    color: ${black};
+    opacity: 0.6;
+    cursor: not-allowed;
   }
 `;
 

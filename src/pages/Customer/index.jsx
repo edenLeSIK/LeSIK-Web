@@ -4,17 +4,22 @@ import Banner from "../../components/FigureBanner";
 import SubContent from "../../components/SubContent";
 import AppGuide from "../../components/AppGuide";
 import kitchen from "../../assets/kitchen.png";
+import serve from "../../assets/serve.png";
 
 const Customer = () => {
   return (
-    <div>
+    <CustomerContainer>
       <MainContent
-        image={kitchen}
+        image={serve}
         headline="makeat 구매 링크 구글 플레이 앱스토어"
+        text="makeat 구매하기"
+        color="pink"
       />
       <AppGuide />
-    </div>
+    </CustomerContainer>
   );
 };
+
+const CustomerContainer = styled.main``;
 
 export default Customer;

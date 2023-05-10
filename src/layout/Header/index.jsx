@@ -66,7 +66,6 @@ const HeaderContainer = styled.nav`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  height: 40px;
   padding: 20px 0;
   background-color: ${(props) => props.bgColor};
   transition: background-color 0.2s ease;
@@ -95,18 +94,17 @@ const HeaderContainer = styled.nav`
       display: flex;
       align-items: center;
       padding: 0;
-      margin-left: 300px;
 
       li > a {
         padding: 0 8px;
         color: ${(props) => props.fontColor};
-        font-size: 1.075rem;
+        font-size: 1.125rem;
         font-weight: 700;
       }
 
       li > a:hover {
         color: ${main};
-        font-size: 1.075rem;
+        font-size: 1.125rem;
         font-weight: 700;
       }
 
@@ -122,7 +120,6 @@ const HeaderContainer = styled.nav`
       background: #00b590;
       text-align: center;
       vertical-align: middle;
-
       cursor: pointer;
     }
 

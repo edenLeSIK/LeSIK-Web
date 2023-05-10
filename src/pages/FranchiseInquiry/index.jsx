@@ -5,7 +5,7 @@ import { purple, darkGray, contentBackground } from "../../theme";
 const FranchiseInquiry = () => {
   return (
     <FranchiseInquiryContainer>
-      <section className="mm">
+      <section className="headline-wrapper">
         <div className="content">
           <h1 className="headline">Optimize your kitchen today</h1>
           <h4 className="desc">
@@ -27,7 +27,7 @@ const FranchiseInquiryContainer = styled.main`
   min-height: 100vh;
   width: 100vw;
 
-  .mm {
+  .headline-wrapper {
     padding-left: 4.44vw;
     padding-right: 4.44vw;
     padding-top: 120px;
@@ -60,7 +60,7 @@ const FranchiseInquiryContainer = styled.main`
 
     .right {
       width: 44.45vw;
-      transform: translateY(-20vh);
+      transform: translateY(-40vh);
     }
   }
 `;

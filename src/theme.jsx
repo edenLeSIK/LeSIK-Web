@@ -5,8 +5,14 @@ export const gray = "#9791a1";
 export const main = "#00b590";
 export const mainHover = "#00a590";
 export const purple = "#a357ef";
-export const purpleHover = "rgb(163, 87, 239, 0.7)";
-export const yellow = "rgb(254,248,76)";
+export const purpleHover = "#a377ef";
+export const lightPurple = "#f3edf9";
+export const vividPink = "#ff006c";
+export const pinkHover = "#ff506c";
+export const yellow = "#eefd47";
+export const yellowHover = "#c7eb3a";
+export const orange = "#ff6e40";
+export const orangeHover = "#ff8e40";
 export const red = "#ff0000";
 
 export const contentBackground = "#f1f2f6";

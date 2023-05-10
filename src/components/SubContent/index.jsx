@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Button from "../Button";
 import { purple, contentBackground } from "../../theme";
 
-const SubContent = ({ color, label, headline, link, onClick }) => {
+const SubContent = ({ color, label, headline, text, onClick }) => {
   return (
     <SectionContainer color={color}>
       <h6>{label}</h6>
@@ -14,7 +14,7 @@ const SubContent = ({ color, label, headline, link, onClick }) => {
             knkandknkadmk fmdkfkdn kdkndknknk naknkandknkadmkf mdkfkdnkdkndk
             nknknaknkandknk admkfmdkfkdnkdkndknknknaknk andknka
           </h5>
-          <Button color="purple" text={link} onClick={onClick} />
+          {text && <Button color="purple" text={text} onClick={onClick} />}
         </div>
         <div className="content-wrapper">
           <div className="content-item">
@@ -43,9 +43,7 @@ const SubContent = ({ color, label, headline, link, onClick }) => {
 };
 
 const SectionContainer = styled.section`
-  padding: 120px 0;
-  padding-left: 4.44vw;
-  padding-right: 4.44vw;
+  padding: 120px 4.44vw;
   background: ${(props) => props.color === "on" && `${contentBackground}`};
 
   h6 {
@@ -122,6 +120,10 @@ const SectionContainer = styled.section`
           line-height: 0.95;
           letter-spacing: 0.04rem;
           text-transform: uppercase;
+
+          /* @media screen and (max-width: 850px) {
+            font-size: 1rem;
+          } */
         }
 
         .text {

@@ -10,9 +10,6 @@ import food from "../../assets/food.png";
 const Home = () => {
   const navigate = useNavigate();
 
-  const redirectToExternalPage = () => {
-    window.location.href = "http://www.cooksup.co.kr/";
-  };
   const navigateToMakeatPage = () => {
     navigate("/makeat");
   };
@@ -36,29 +33,32 @@ const Home = () => {
         text="makeat 구매하기"
       />
       <SubContent
-        label="Customers"
-        headline="How we makeat?"
-        link="makeat 알아보기"
-        onClick={navigateToCustomerPage}
-      />
-      <SubContent
-        color="on"
         label="Franchises & Businesses"
         headline="makeat assemble"
-        link="Do you want makeat?"
+        text="Do you want makeat?"
         onClick={navigateToFranchisePage}
       />
       <SubContent
+        color="on"
+        label="Customers"
+        headline="How we makeat?"
+        text="makeat 알아보기"
+        onClick={navigateToCustomerPage}
+      />
+      {/* <SubContent
         label="Creators"
         headline="share own your recipe"
-        link="Learn more"
+        text="Learn more"
       />
-      <Feed />
+      <Feed /> */}
       <AdsContent />
     </HomeContainer>
   );
 };
 
-const HomeContainer = styled.div``;
+const HomeContainer = styled.main`
+  min-height: 100vh;
+  width: 100vw;
+`;
 
 export default Home;

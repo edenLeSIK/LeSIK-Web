@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Button from "../Button";
 
-const MainSection = ({ image, headline, desc, onClick, text }) => {
+const MainSection = ({ image, headline, desc, onClick, text, color }) => {
   return (
     <SectionContainer>
       <figure>
@@ -11,7 +11,7 @@ const MainSection = ({ image, headline, desc, onClick, text }) => {
         <h1>{headline}</h1>
         <h5>{desc}</h5>
         <div className="button-wrapper">
-          <Button color="main" text={text} onClick={onClick} />
+          <Button color={color} text={text} onClick={onClick} />
         </div>
       </div>
     </SectionContainer>
@@ -20,13 +20,13 @@ const MainSection = ({ image, headline, desc, onClick, text }) => {
 
 const SectionContainer = styled.section`
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   min-height: 600px;
   overflow: hidden;
 
   figure {
-    width: auto;
+    width: 100%;
     height: 100vh;
 
     img {

@@ -13,19 +13,23 @@ const Franchise = () => {
   };
 
   return (
-    <div>
+    <FranchiseContainer>
       <MainContent
         image={kitchen}
         headline="여기는 Franchise에게 안내하는 페이지"
         text="입점 신청하기"
+        onClick={navigateToInquiryPage}
+        color="orange"
       />
       <Banner />
-      <SubContent headline="what do you makeat?" link="입점 신청하기" />
-      <SubContent color="on" headline="why you makeat?" link="입점 신청하기" />
+      <SubContent headline="what do you makeat?" />
+      <SubContent color="on" headline="why you makeat?" />
       <Banner color="off" />
       <StageContent />
-    </div>
+    </FranchiseContainer>
   );
 };
+
+const FranchiseContainer = styled.main``;
 
 export default Franchise;

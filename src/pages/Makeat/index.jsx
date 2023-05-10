@@ -13,6 +13,6 @@ const Makeat = () => {
   );
 };
 
-const MakeatContainer = styled.div``;
+const MakeatContainer = styled.main``;
 
 export default Makeat;

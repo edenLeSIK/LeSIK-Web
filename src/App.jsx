@@ -7,7 +7,7 @@ import Makeat from "./pages/Makeat";
 import Customer from "./pages/Customer";
 import Franchise from "./pages/Franchise";
 import Inquiry from "./pages/FranchiseInquiry";
-import LeSik from "./pages/Lesik";
+import LeSik from "./pages/LeSik";
 import * as theme from "./theme";
 import GlobalStyle from "./GlobalStyle";
 

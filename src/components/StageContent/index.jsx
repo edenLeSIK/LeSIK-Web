@@ -12,6 +12,7 @@ const StageContent = () => {
           Select the existing equipment that can be found in your kitchen.
         </h5>
         <Step />
+        <Step />
       </div>
     </SectionContainer>
   );

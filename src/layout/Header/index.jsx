@@ -16,6 +16,8 @@ const Header = () => {
     navigate("/makeat");
   };
 
+  console.log(isHeaderModal);
+
   useEffect(() => {
     const handleScroll = () => {
       const position = window.pageYOffset;

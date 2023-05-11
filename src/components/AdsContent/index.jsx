@@ -68,7 +68,7 @@ const ContentContainer = styled.section`
       @media screen and (max-width: 939px) and (min-width: 767px),
         screen and (max-width: 766px) {
         width: 66.5933333333vw;
-        font-size: 3rem;
+        font-size: 2.5rem;
       }
     }
   }

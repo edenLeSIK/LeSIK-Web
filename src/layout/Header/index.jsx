@@ -1,16 +1,20 @@
 import { useState, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Button from "../../components/Button";
 import HeaderModal from "./HeaderModal";
-import { navList } from "../../constants/nav";
 import logo from "../../assets/cooksup_logo.png";
 import { CgMenuRound, CgCloseO } from "react-icons/cg";
 import { black, white, darkGray } from "../../theme";
 
 const Header = () => {
+  const navigate = useNavigate();
   const [isHeaderModal, setIsHeaderModal] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
+
+  const navigateToMakeatPage = () => {
+    navigate("/makeat");
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,16 +26,23 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const backgroundColor =
+    scrollPosition > window.innerHeight && !isHeaderModal
+      ? `${white}`
+      : `transparent`;
+
   const bgColor =
     scrollPosition > window.innerHeight ? `${white}` : "transparent";
   const fontColor =
     scrollPosition > window.innerHeight ? `${black}` : `${white}`;
   const boxShadow =
-    scrollPosition > window.innerHeight
+    scrollPosition > window.innerHeight && !isHeaderModal
       ? "0px 5px 10px rgba(0, 0, 0, 0.1)"
       : "none";
   const iconColor =
-    scrollPosition > window.innerHeight ? `${darkGray}` : `${white}`;
+    scrollPosition > window.innerHeight && !isHeaderModal
+      ? `${darkGray}`
+      : `${white}`;
 
   const handleHeader = () => {
     setIsHeaderModal(!isHeaderModal);
@@ -40,6 +51,7 @@ const Header = () => {
   return (
     <>
       <HeaderContainer
+        backgroundColor={backgroundColor}
         bgColor={bgColor}
         iconColor={iconColor}
         fontColor={fontColor}
@@ -54,15 +66,13 @@ const Header = () => {
           <Link to="/" className="link">
             <img alt="logo" src={logo} />
           </Link>
-          {/* <ul>
-          {navList.map((nav) => (
-            <li key={nav.id}>
-              <NavLink to={nav.link}>{nav.category}</NavLink>
-            </li>
-          ))}
-        </ul> */}
           <div className="button-wrapper">
-            <Button color="main" text="구매하기" className="hide-on-mobile" />
+            <Button
+              color="main"
+              text="구매하기"
+              className="hide-on-mobile"
+              onClick={navigateToMakeatPage}
+            />
           </div>
         </div>
       </HeaderContainer>
@@ -80,7 +90,7 @@ const HeaderContainer = styled.nav`
   align-items: center;
   width: 100%;
   padding: 20px 0;
-  background-color: ${(props) => props.bgColor};
+  background-color: ${(props) => props.backgroundColor};
   transition: background-color 0.2s ease;
   z-index: 50;
   box-shadow: ${(props) => props.boxShadow};

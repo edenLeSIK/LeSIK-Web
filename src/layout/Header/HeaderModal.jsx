@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import ScrollBlocker from "../../hooks/scrollBlocker";
 import { navList } from "../../constants/nav";
-import { gray, main, white, yellow } from "../../theme";
+import { gray, main, white } from "../../theme";
 import Button from "../../components/Button";
 
 const HeaderModal = ({ setIsHeaderModal }) => {
@@ -59,7 +58,7 @@ const HeaderModalContainer = styled.div`
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
-    row-gap: 32px;
+    row-gap: 17px;
     padding: 52px 4.44vw 24px;
     overflow: scroll;
   }
@@ -98,6 +97,12 @@ const HeaderModalContainer = styled.div`
 
   .copyright {
     color: ${white};
+
+    @media screen and (max-width: 939px) and (min-width: 767px),
+      screen and (max-width: 766px) {
+      margin-left: 5px;
+      font-size: 0.5rem;
+    }
   }
 `;
 

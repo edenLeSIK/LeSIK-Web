@@ -67,6 +67,11 @@ const StepContainer = styled.div`
     padding-left: 15.5566666667vw;
     padding-right: 15.5566666667vw;
 
+    @media screen and (max-width: 766px) and (max-width: 766px) {
+      justify-content: space-evenly;
+      padding: 35px 0;
+    }
+
     .option {
       display: -webkit- flex;
       display: flex;
@@ -83,13 +88,37 @@ const StepContainer = styled.div`
       border-radius: 16px;
       cursor: pointer;
 
+      @media screen and (max-width: 766px) and (max-width: 766px) {
+        display: -webkit- flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: flex-start;
+        justify-content: flex-start;
+        width: 46%;
+        height: unset;
+        padding: 16px;
+        margin: 0 0 16px 0;
+      }
+
       img {
         width: 2rem;
+
+        @media screen and (max-width: 766px) {
+          width: 1.5rem;
+          margin-right: 8px;
+        }
       }
 
       span {
         margin-top: 20px;
         font-size: 0.6666666667rem;
+
+        @media screen and (max-width: 766px) {
+          margin: 0;
+        }
       }
     }
 
@@ -105,6 +134,10 @@ const StepContainer = styled.div`
 
   .button-wrapper {
     margin-top: 70px;
+
+    @media screen and (max-width: 766px) {
+      margin: 0;
+    }
   }
 `;
 

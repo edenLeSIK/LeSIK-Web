@@ -42,7 +42,7 @@ const ButtonContainer = styled.button`
   background: ${(props) => props.color === "orange" && `${orange}`};
   border: ${(props) => props.color === "purple" && `1px solid ${purple}`};
   border-radius: 54px;
-  transition: all ease 0.2s;
+  : all ease 0.2s;
 
   &:hover {
     background: ${(props) => props.color === "main" && `${mainHover}`};

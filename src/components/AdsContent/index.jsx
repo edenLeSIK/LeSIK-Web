@@ -13,7 +13,9 @@ const AdsContent = () => {
   return (
     <ContentContainer>
       <div className="content-wrapper">
-        <h2 className="headline">Ready to Makeat?</h2>
+        <h2 className="headline">
+          Ready <br /> to Makeat?
+        </h2>
         <Button
           text="바로 참여하기"
           color="yellow"
@@ -66,7 +68,7 @@ const ContentContainer = styled.section`
       @media screen and (max-width: 939px) and (min-width: 767px),
         screen and (max-width: 766px) {
         width: 66.5933333333vw;
-        font-size: 3.5555555556rem;
+        font-size: 3rem;
       }
     }
   }

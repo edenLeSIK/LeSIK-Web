@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
+import Button from "../../components/Button";
+import HeaderModal from "./HeaderModal";
 import { navList } from "../../constants/nav";
 import logo from "../../assets/cooksup_logo.png";
-import { CgMenuRound } from "react-icons/cg";
+import { CgMenuRound, CgCloseO } from "react-icons/cg";
 import { black, white, darkGray } from "../../theme";
-import Button from "../../components/Button";
 
 const Header = () => {
   const [isHeaderModal, setIsHeaderModal] = useState(false);
@@ -37,29 +38,36 @@ const Header = () => {
   };
 
   return (
-    <HeaderContainer
-      bgColor={bgColor}
-      iconColor={iconColor}
-      fontColor={fontColor}
-      boxShadow={boxShadow}
-    >
-      <div className="header-wrapper">
-        <CgMenuRound onClick={handleHeader} />
-        <Link to="/" className="link">
-          <img alt="logo" src={logo} />
-        </Link>
-        {/* <ul>
+    <>
+      <HeaderContainer
+        bgColor={bgColor}
+        iconColor={iconColor}
+        fontColor={fontColor}
+        boxShadow={boxShadow}
+      >
+        <div className="header-wrapper">
+          {isHeaderModal ? (
+            <CgCloseO onClick={handleHeader} />
+          ) : (
+            <CgMenuRound onClick={handleHeader} />
+          )}
+          <Link to="/" className="link">
+            <img alt="logo" src={logo} />
+          </Link>
+          {/* <ul>
           {navList.map((nav) => (
             <li key={nav.id}>
               <NavLink to={nav.link}>{nav.category}</NavLink>
             </li>
           ))}
         </ul> */}
-        <div className="button-wrapper">
-          <Button color="main" text="구매하기" className="hide-on-mobile" />
+          <div className="button-wrapper">
+            <Button color="main" text="구매하기" className="hide-on-mobile" />
+          </div>
         </div>
-      </div>
-    </HeaderContainer>
+      </HeaderContainer>
+      {isHeaderModal && <HeaderModal setIsHeaderModal={setIsHeaderModal} />}
+    </>
   );
 };
 
@@ -76,6 +84,7 @@ const HeaderContainer = styled.nav`
   transition: background-color 0.2s ease;
   z-index: 50;
   box-shadow: ${(props) => props.boxShadow};
+  overflow: hidden;
 
   @media screen and (max-width: 939px) and (min-width: 767px),
     screen and (max-width: 766px) {
@@ -104,6 +113,8 @@ const HeaderContainer = styled.nav`
       margin: auto 0;
       color: ${(props) => props.iconColor};
       font-size: 3rem;
+      transition: all 0.2s ease;
+      cursor: pointer;
 
       @media screen and (max-width: 939px) and (min-width: 767px),
         screen and (max-width: 766px) {

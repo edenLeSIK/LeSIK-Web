@@ -1,17 +1,18 @@
 export const navList = [
+  { id: 1, category: "홈", link: "" },
   {
-    id: 1,
-    category: "For Customer",
+    id: 2,
+    category: "고객",
     link: "customer",
   },
   {
-    id: 2,
-    category: "For Franchise",
+    id: 3,
+    category: "프랜차이즈",
     link: "franchise",
   },
   {
-    id: 3,
-    category: "About LeSIK",
+    id: 4,
+    category: "회사 소개",
     link: "lesik",
   },
 ];

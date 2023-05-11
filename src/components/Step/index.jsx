@@ -127,8 +127,8 @@ const StepContainer = styled.div`
     }
 
     .active {
+      border: 1px solid transparent;
       background: ${lightPurple};
-      border: none;
     }
   }
 

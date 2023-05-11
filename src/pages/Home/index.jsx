@@ -24,12 +24,7 @@ const Home = () => {
     <HomeContainer>
       <MainContent
         image={food}
-        headline={
-          <>
-            당신에게
-            <br /> 맞춘 <br /> 건강식단, <br /> makeat
-          </>
-        }
+        headline={<>당신에게 맞춘 건강식단, makeat</>}
         desc="안녕하세요 여러분 makeat 구매해주시죠"
         onClick={navigateToMakeatPage}
         text="makeat 구매하기"

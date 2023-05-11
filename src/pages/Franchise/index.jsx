@@ -18,7 +18,8 @@ const Franchise = () => {
         image={kitchen}
         headline={
           <>
-            Franchise 여러분에게 <br /> 안내하는
+            Franchise
+            <br /> 여러분에게 <br /> 안내하는
           </>
         }
         text="입점 신청하기"

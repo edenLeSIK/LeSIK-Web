@@ -26,6 +26,11 @@ const SectionContainer = styled.section`
   min-height: 600px;
   overflow: hidden;
 
+  @media screen and (max-width: 939px) and (min-width: 767px),
+    screen and (max-width: 766px) {
+    min-height: unset;
+  }
+
   figure {
     width: 100%;
     height: 100vh;
@@ -45,7 +50,14 @@ const SectionContainer = styled.section`
     padding: 0 0 56px;
     padding-left: 4.44vw;
 
+    @media screen and (max-width: 939px) and (min-width: 767px),
+      screen and (max-width: 766px) {
+      /* padding: 0 0 24px; */
+      padding-left: 4.44vw;
+    }
+
     h1 {
+      width: 36.6716666667vw;
       padding: 0 0 32px;
       color: ${white};
       font-size: 5.3333333333rem;
@@ -54,14 +66,30 @@ const SectionContainer = styled.section`
       letter-spacing: 0.01rem;
       text-transform: uppercase;
       text-shadow: 0px 10px 10px rgba(32, 32, 43, 0.2);
+
+      @media screen and (max-width: 939px) and (min-width: 767px),
+        screen and (max-width: 766px) {
+        width: 91.12vw;
+        padding: 0 0 16px;
+        font-size: 3.5555555556rem;
+      }
     }
 
     h5 {
+      width: 28.8933333333vw;
       color: ${white};
       font-size: 1.3333333333rem;
       font-weight: 400;
       line-height: 1.5;
       letter-spacing: -0.01rem;
+      text-shadow: 0px 10px 10px rgba(32, 32, 43, 0.2);
+
+      @media screen and (max-width: 939px) and (min-width: 767px),
+        screen and (max-width: 766px) {
+        width: 70.005vw;
+        font-size: 1rem;
+        line-height: 1.25;
+      }
     }
 
     .button-wrapper {

@@ -13,9 +13,7 @@ const AdsContent = () => {
   return (
     <ContentContainer>
       <div className="content-wrapper">
-        <h2 className="headline">
-          Ready to <br /> Makeat <br /> your kitchen?
-        </h2>
+        <h2 className="headline">Ready to Makeat?</h2>
         <Button
           text="바로 참여하기"
           color="yellow"
@@ -29,6 +27,11 @@ const AdsContent = () => {
 const ContentContainer = styled.section`
   padding: 100px 4.44vw;
   background: #20202b;
+
+  @media screen and (max-width: 939px) and (min-width: 767px),
+    screen and (max-width: 766px) {
+    padding: 48px 5.33vw;
+  }
 
   .content-wrapper {
     position: relative;
@@ -44,6 +47,11 @@ const ContentContainer = styled.section`
     overflow: hidden;
     background: ${orange};
 
+    @media screen and (max-width: 939px) and (min-width: 767px),
+      screen and (max-width: 766px) {
+      padding: 64px 0;
+    }
+
     .headline {
       width: 44.45vw;
       margin: 32px 0;
@@ -54,6 +62,12 @@ const ContentContainer = styled.section`
       line-height: 0.95;
       letter-spacing: 0.01rem;
       text-transform: uppercase;
+
+      @media screen and (max-width: 939px) and (min-width: 767px),
+        screen and (max-width: 766px) {
+        width: 66.5933333333vw;
+        font-size: 3.5555555556rem;
+      }
     }
   }
 `;

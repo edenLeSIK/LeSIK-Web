@@ -59,6 +59,14 @@ const ButtonContainer = styled.button`
     opacity: 0.6;
     cursor: not-allowed;
   }
+
+  @media screen and (max-width: 939px) and (min-width: 767px),
+    screen and (max-width: 766px) {
+    min-width: 100px;
+    padding: 15px 21px;
+    font-size: 0.9rem;
+    line-height: 1;
+  }
 `;
 
 export default Button;

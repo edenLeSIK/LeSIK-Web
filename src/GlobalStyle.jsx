@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
+import { black } from "./theme";
 
 const GlobalStyle = createGlobalStyle`
     ${reset}
@@ -12,13 +13,14 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'NEXON Lv2 Gothic';
     }
     button {
+        text-decoration: none;
         font-family: inherit;
         border:none;
         outline: none;
     }
     input, textarea, select, a{
         text-decoration: none;
-        color: #000;
+        color: ${black};
         font-family: 'NEXON Lv2 Gothic';
         resize: none;
         outline: none;

@@ -12,9 +12,14 @@ import {
   black,
 } from "../../theme";
 
-const Button = ({ icon, text, color, onClick, disabled }) => {
+const Button = ({ icon, text, color, onClick, disabled, className }) => {
   return (
-    <ButtonContainer color={color} onClick={onClick} disabled={disabled}>
+    <ButtonContainer
+      color={color}
+      onClick={onClick}
+      disabled={disabled}
+      className={className}
+    >
       {icon}
       {text}
     </ButtonContainer>
@@ -25,7 +30,7 @@ const ButtonContainer = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 190px;
+  min-width: 150px;
   padding: 15px 20px;
   font-size: 1rem;
   font-weight: 700;

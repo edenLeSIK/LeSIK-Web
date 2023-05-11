@@ -33,7 +33,14 @@ const SubContent = ({ color, label, headline, text, onClick }) => {
             knkandknkadmk fmdkfkdn kdkndknknk naknkandknkadmkf mdkfkdnkdkndk
             nknknaknkandknk admkfmdkfkdnkdkndknknknaknk andknka
           </h5>
-          {text && <Button color="purple" text={text} onClick={onClick} />}
+          {text && (
+            <Button
+              color="purple"
+              text={text}
+              onClick={onClick}
+              className="hide-on-mobile"
+            />
+          )}
         </div>
         <div className="content-wrapper">
           {a.map((content) => (
@@ -44,7 +51,14 @@ const SubContent = ({ color, label, headline, text, onClick }) => {
           ))}
         </div>
         <div className="button-wrapper">
-          {text && <Button color="purple" text={text} onClick={onClick} />}
+          {text && (
+            <Button
+              color="purple"
+              text={text}
+              onClick={onClick}
+              className="only-on-mobile"
+            />
+          )}
         </div>
       </div>
     </SectionContainer>
@@ -138,13 +152,6 @@ const SectionContainer = styled.section`
           line-height: 1.25;
         }
       }
-
-      button {
-        @media screen and (max-width: 939px) and (min-width: 767px),
-          screen and (max-width: 766px) {
-          display: none;
-        }
-      }
     }
 
     .content-wrapper {
@@ -206,12 +213,6 @@ const SectionContainer = styled.section`
             font-size: 0.7777777778rem;
           }
         }
-      }
-    }
-
-    .button-wrapper {
-      @media screen and (min-width: 940px) {
-        display: none;
       }
     }
   }

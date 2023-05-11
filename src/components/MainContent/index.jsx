@@ -52,7 +52,6 @@ const SectionContainer = styled.section`
 
     @media screen and (max-width: 939px) and (min-width: 767px),
       screen and (max-width: 766px) {
-      /* padding: 0 0 24px; */
       padding-left: 4.44vw;
     }
 

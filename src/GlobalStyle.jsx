@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
     }
     button {
         text-decoration: none;
+        color: ${black};
         font-family: inherit;
         border:none;
         outline: none;

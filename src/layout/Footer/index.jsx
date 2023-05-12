@@ -1,35 +1,32 @@
-import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { navList } from "../../constants/nav";
 import logo from "../../assets/cooksup_logo.png";
-import { white } from "../../theme";
+import { gray, purple, white, yellow } from "../../theme";
+import Button from "../../components/Button";
 
 const Footer = () => {
   return (
     <FooterContainer>
       <div className="info">
-        <address className="address">
-          <strong className="company">주식회사 래식</strong>
-          <p>사업자 등록번호 : 452-88-01682 | 대표 : 김한성</p>
-          <p>
-            호스팅 서비스 : 주식회사 래식 | 통신판매업 신고번호 :
-            2022-대전유성-0960 &nbsp;
-            <a
-              href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=4528801682"
-              target="_blank"
-            >
-              사업자정보확인
-            </a>
-          </p>
-          <p>34002 대전광역시 유성구 과학나래2길 1 201-1호</p>
-        </address>
-        {/* <div className="menu">
-          {navList.map((nav) => (
-            <NavLink key={nav.id} to={nav.category}>
-              {nav.category}
-            </NavLink>
-          ))}
-        </div> */}
+        <div className="row">
+          <address className="address">
+            <strong className="company">주식회사 래식</strong>
+            <p>사업자 등록번호 : 452-88-01682 | 대표 : 김한성</p>
+            <p>
+              호스팅 서비스 : 주식회사 래식 |&nbsp;
+              <span>통신판매업 신고번호 : 2022-대전유성-0960 &nbsp;</span>
+              <a
+                href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=4528801682"
+                target="_blank"
+              >
+                사업자정보확인
+              </a>
+            </p>
+            <p>34002 대전광역시 유성구 과학나래2길 1 201-1호</p>
+          </address>
+          <div className="button-wrapper">
+            <Button color="pink" text="makeat 구매하기" />
+          </div>
+        </div>
         <div className="logo">
           <img alt="logo" src={logo} />
         </div>
@@ -54,15 +51,20 @@ const Footer = () => {
 
 const FooterContainer = styled.footer`
   padding: 48px 4.44vw;
-  border-top: 2px solid #fff;
+  border-top: 2px solid ${white};
   background: #20202b;
+
+  @media screen and (max-width: 939px) and (min-width: 767px),
+    screen and (max-width: 766px) {
+    padding: 24px 5.33vw;
+  }
 
   .info {
     display: flex;
     flex-direction: column;
 
     address {
-      color: #8b95a1;
+      color: ${white};
       font-size: 15px;
       font-style: normal;
       line-height: 1.6;
@@ -76,33 +78,35 @@ const FooterContainer = styled.footer`
       }
 
       p {
+        @media screen and (max-width: 939px) and (min-width: 767px),
+          screen and (max-width: 766px) {
+          font-size: 0.6666666667rem;
+        }
+
+        span {
+          @media screen and (max-width: 939px) and (min-width: 767px),
+            screen and (max-width: 766px) {
+            display: block;
+          }
+        }
+
         a {
-          color: inherit;
+          color: ${gray};
         }
 
         a:hover {
-          color: ${white};
+          color: ${purple};
         }
-      }
-    }
-
-    .menu {
-      display: flex;
-      flex-direction: row;
-      margin-left: 40px;
-      color: #8b95a1;
-
-      a {
-        color: inherit;
-      }
-
-      a + a {
-        margin-left: 30px;
       }
     }
 
     .logo {
       margin-top: 7rem;
+
+      @media screen and (max-width: 939px) and (min-width: 767px),
+        screen and (max-width: 766px) {
+        margin-top: 3rem;
+      }
 
       img {
         height: 90px;
@@ -116,15 +120,29 @@ const FooterContainer = styled.footer`
       width: 100%;
       padding-top: 30px;
       border-top: 1px solid ${white};
-      color: #8b95a1;
+      color: ${white};
+
+      @media screen and (max-width: 939px) and (min-width: 767px),
+        screen and (max-width: 766px) {
+        flex-direction: column-reverse;
+        row-gap: 20px;
+        padding-top: 20px;
+        font-size: 0.7777777778rem;
+      }
 
       .legal-pages {
         display: flex;
         flex-direction: row;
-        color: #8b95a1;
+        justify-content: space-between;
+        color: inherit;
 
         a {
           color: inherit;
+          cursor: pointer;
+        }
+
+        a:hover {
+          color: ${yellow};
         }
 
         a + a {

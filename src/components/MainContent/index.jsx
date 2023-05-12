@@ -75,7 +75,7 @@ const SectionContainer = styled.section`
     }
 
     h5 {
-      width: 28.8933333333vw;
+      width: 30.33333333333vw;
       color: ${white};
       font-size: 1.3333333333rem;
       font-weight: 400;

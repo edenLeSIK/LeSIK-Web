@@ -1,8 +1,72 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Step from "../Step";
+import Button from "../Button";
+import {
+  equipmentList,
+  foodTypeList,
+  kitchenCountList,
+} from "../../constants/content";
 
 const StageContent = () => {
+  const navigate = useNavigate();
+  const [index, setIndex] = useState(0);
+  const [options, setOptions] = useState([]);
+  const components = [Step, Step, Step];
+
+  useEffect(() => {
+    const handleOption = () => {
+      let currentOptions = [];
+      switch (index) {
+        case 0:
+          currentOptions = equipmentList.map((option) => ({
+            ...option,
+            active: false,
+          }));
+          break;
+        case 1:
+          currentOptions = foodTypeList.map((option) => ({
+            ...option,
+            active: false,
+          }));
+          break;
+        case 2:
+          currentOptions = kitchenCountList.map((option) => ({
+            ...option,
+            active: false,
+          }));
+          break;
+        default:
+          break;
+      }
+      setOptions(currentOptions);
+    };
+    handleOption();
+  }, [index]);
+
+  const isButtonDisabled = options.every((option) => !option.active);
+
+  const navigateToInquiryPage = () => {
+    navigate("/inquiry");
+  };
+
+  const selectOption = (i) => {
+    setOptions((prevOptions) => {
+      const newOptions = [...prevOptions];
+      newOptions[i] = { ...newOptions[i], active: !newOptions[i].active };
+      return newOptions;
+    });
+  };
+
+  const handleNext = () => {
+    index === 2 ? setIndex(0) : setIndex((prev) => prev + 1);
+  };
+  const handlePrev = () => {
+    index === 0 ? setIndex(2) : setIndex((prev) => prev - 1);
+  };
+  const CurrentComponent = components[index];
+
   return (
     <SectionContainer>
       <div className="stage-wrapper">
@@ -11,13 +75,27 @@ const StageContent = () => {
         <h5>
           Select the existing equipment that can be found in your kitchen.
         </h5>
-        <Step />
+        <CurrentComponent options={options} selectOption={selectOption} />
+      </div>
+      <div className="button-wrapper">
+        <Button
+          text="next"
+          color="yellow"
+          disabled={isButtonDisabled}
+          onClick={index === 2 ? navigateToInquiryPage : handleNext}
+        />
+        {!(index === 0) && (
+          <Button onClick={handlePrev} text="Back" color="transparent" />
+        )}
       </div>
     </SectionContainer>
   );
 };
 
 const SectionContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-left: 4.44vw;
   padding-right: 4.44vw;
   padding-top: 120px;
@@ -61,6 +139,14 @@ const SectionContainer = styled.section`
 
     h5 {
       text-align: center;
+    }
+
+    .button-wrapper {
+      margin-top: 70px;
+
+      @media screen and (max-width: 766px) {
+        margin: 0;
+      }
     }
   }
 `;

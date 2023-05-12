@@ -50,16 +50,16 @@ const SubContent = ({ color, label, headline, text, onClick }) => {
             </div>
           ))}
         </div>
-        <div className="button-wrapper">
-          {text && (
-            <Button
-              color="purple"
-              text={text}
-              onClick={onClick}
-              className="only-on-mobile"
-            />
-          )}
-        </div>
+      </div>
+      <div className="button-wrapper">
+        {text && (
+          <Button
+            color="purple"
+            text={text}
+            onClick={onClick}
+            className="only-on-mobile"
+          />
+        )}
       </div>
     </SectionContainer>
   );
@@ -215,6 +215,12 @@ const SectionContainer = styled.section`
         }
       }
     }
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
   }
 `;
 

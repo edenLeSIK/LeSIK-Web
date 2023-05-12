@@ -14,7 +14,19 @@ const FranchiseInquiry = () => {
         </div>
       </section>
       <section className="inquiry-content">
-        <div className="left"></div>
+        <div className="left">
+          <ul>
+            <li>Zero upfront fees or lengthy contracts</li>
+            <li>
+              Exclusive creator brands – tap into a network of millions of
+              engaged followers
+            </li>
+            <li>
+              Maximize your existing operations, food suppliers &amp; setup –
+              focus on the food, We’ll handle the rest!
+            </li>
+          </ul>
+        </div>
         <div className="right">
           <Form />
         </div>
@@ -24,8 +36,8 @@ const FranchiseInquiry = () => {
 };
 
 const FranchiseInquiryContainer = styled.main`
-  min-height: 100vh;
   width: 100vw;
+  min-height: 100vh;
 
   .headline-wrapper {
     padding-left: 4.44vw;
@@ -34,10 +46,30 @@ const FranchiseInquiryContainer = styled.main`
     padding-bottom: 48px;
     background-color: ${purple};
 
+    @media screen and (max-width: 939px) and (min-width: 767px),
+      screen and (max-width: 766px) {
+      padding: 48px 5.33vw 0;
+    }
+
     .content {
       position: relative;
       width: 44.45vw;
       padding-top: 120px;
+
+      @media screen and (max-width: 766px) {
+        width: 100%;
+        padding: 48px 5.33vw;
+        text-align: center;
+      }
+
+      .headline {
+        margin-bottom: 24px;
+
+        @media screen and (max-width: 939px) and (min-width: 767px),
+          screen and (max-width: 766px) {
+          font-size: 2.5rem;
+        }
+      }
 
       .desc {
         color: ${darkGray};
@@ -45,6 +77,12 @@ const FranchiseInquiryContainer = styled.main`
         font-weight: 400;
         line-height: 1.15;
         letter-spacing: -0.01rem;
+
+        @media screen and (max-width: 939px) and (min-width: 767px),
+          screen and (max-width: 766px) {
+          font-size: 1.1111111111rem;
+          line-height: 1.25;
+        }
       }
     }
   }
@@ -58,9 +96,37 @@ const FranchiseInquiryContainer = styled.main`
     padding-right: 4.44vw;
     background-color: ${contentBackground};
 
+    .left {
+      position: sticky;
+      top: 100px;
+      width: 44.45vw;
+
+      ul {
+        padding-top: 48px;
+        padding-left: 32px;
+        font-size: 1.3333333333rem;
+        font-weight: 400;
+        line-height: 1.3;
+        letter-spacing: -0.01rem;
+
+        li {
+          margin-bottom: 24px;
+          padding: 0;
+          list-style: disc;
+        }
+      }
+    }
+
     .right {
       width: 44.45vw;
       transform: translateY(-40vh);
+
+      @media screen and (max-width: 766px) and (max-width: 766px) {
+        position: relative;
+        padding: 0 5.33vw;
+        transform: translateY(0%);
+        z-index: 0;
+      }
     }
   }
 `;

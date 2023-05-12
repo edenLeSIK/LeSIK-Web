@@ -4,46 +4,20 @@ import { purple, lightPurple } from "../../theme";
 import Button from "../Button";
 import fridge from "../../assets/fridge.png";
 
-const Step = () => {
-  const [options, setOptions] = useState(Array(8).fill(false));
-  const [activeOptions, setActiveOptions] = useState([]);
-  const selectOption = (i) => {
-    setOptions((prevOptions) => {
-      const newOptions = [...prevOptions];
-      newOptions[i] = !newOptions[i];
-      return newOptions;
-    });
-
-    setActiveOptions((prevActiveOptions) => {
-      const newActiveOptions = [...prevActiveOptions];
-      if (prevActiveOptions.includes(i)) {
-        const indexToRemove = prevActiveOptions.indexOf(i);
-        newActiveOptions.splice(indexToRemove, 1);
-      } else {
-        newActiveOptions.push(i);
-      }
-      return newActiveOptions;
-    });
-  };
-
-  const isButtonDisabled = activeOptions.length === 0;
-
+const Step = ({ options, selectOption }) => {
   return (
     <StepContainer>
       <div className="step">
         {options.map((option, i) => (
           <div
             key={i}
-            className={`option ${option ? "active" : ""}`}
+            className={`option ${option.active ? "active" : ""}`}
             onClick={() => selectOption(i)}
           >
             <img alt="icon" src={fridge} />
-            <span>냉장고</span>
+            <span>{option.name}</span>
           </div>
         ))}
-      </div>
-      <div className="button-wrapper">
-        <Button text="next" color="yellow" disabled={isButtonDisabled} />
       </div>
     </StepContainer>
   );
@@ -132,13 +106,13 @@ const StepContainer = styled.div`
     }
   }
 
-  .button-wrapper {
+  /* .button-wrapper {
     margin-top: 70px;
 
     @media screen and (max-width: 766px) {
       margin: 0;
     }
-  }
+  } */
 `;
 
 export default Step;

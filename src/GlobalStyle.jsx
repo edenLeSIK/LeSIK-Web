@@ -13,11 +13,12 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'NEXON Lv2 Gothic';
     }
     button {
-        text-decoration: none;
-        color: ${black};
-        font-family: inherit;
+        background: transparent;
         border:none;
         outline: none;
+        color: ${black};
+        font-family: inherit;
+        text-decoration: none;
     }
     input, textarea, select, a{
         text-decoration: none;
@@ -50,6 +51,16 @@ const GlobalStyle = createGlobalStyle`
 
         @media screen and (max-width: 939px) {
             display: block;
+        }
+    }
+    .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        @media screen and (max-width: 939px) and (min-width: 767px), screen and (max-width: 766px) {
+            flex-direction: column;
+            row-gap: 20px;
         }
     }
     @font-face {

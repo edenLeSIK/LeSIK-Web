@@ -4,7 +4,9 @@ import styled from "styled-components";
 import Button from "../../components/Button";
 import HeaderModal from "./HeaderModal";
 import logo from "../../assets/cooksup_logo.png";
-import { CgMenuRound, CgCloseO } from "react-icons/cg";
+import { CgMenuRound, CgCloseO, CgCloseR } from "react-icons/cg";
+import { GiHamburger } from "react-icons/gi";
+import { FaHamburger } from "react-icons/fa";
 import { black, white, darkGray } from "../../theme";
 
 const Header = () => {
@@ -15,8 +17,6 @@ const Header = () => {
   const navigateToMakeatPage = () => {
     navigate("/makeat");
   };
-
-  console.log(isHeaderModal);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,9 +61,9 @@ const Header = () => {
       >
         <div className="header-wrapper">
           {isHeaderModal ? (
-            <CgCloseO onClick={handleHeader} />
+            <CgCloseO onClick={handleHeader} className="icon" />
           ) : (
-            <CgMenuRound onClick={handleHeader} />
+            <FaHamburger onClick={handleHeader} />
           )}
           <Link to="/" className="link">
             <img alt="logo" src={logo} />
@@ -83,7 +83,7 @@ const Header = () => {
   );
 };
 
-const HeaderContainer = styled.nav`
+const HeaderContainer = styled.header`
   position: fixed;
   left: 0;
   display: flex;
@@ -91,7 +91,7 @@ const HeaderContainer = styled.nav`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 20px 0;
+  padding: 20px 4.44vw;
   background-color: ${(props) => props.backgroundColor};
   transition: background-color 0.2s ease;
   z-index: 50;
@@ -109,10 +109,9 @@ const HeaderContainer = styled.nav`
   }
 
   .header-wrapper {
-    display: flex;
-    justify-content: space-between;
-    width: 92%;
-    max-width: calc(100% - 48px);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
     margin: 0 auto;
 
     @media screen and (max-width: 939px) and (min-width: 767px),
@@ -122,9 +121,11 @@ const HeaderContainer = styled.nav`
     }
 
     svg {
+      align-self: center;
+      justify-self: flex-start;
       margin: auto 0;
       color: ${(props) => props.iconColor};
-      font-size: 3rem;
+      font-size: 2.75rem;
       transition: all 0.2s ease;
       cursor: pointer;
 
@@ -136,6 +137,8 @@ const HeaderContainer = styled.nav`
     }
 
     .link {
+      align-self: center;
+      justify-self: center;
       margin: auto 0;
 
       @media screen and (max-width: 939px) and (min-width: 767px),
@@ -147,13 +150,17 @@ const HeaderContainer = styled.nav`
         display: flex;
         align-items: center;
         height: 50px;
-        margin-right: 24px;
 
         @media screen and (max-width: 939px) and (min-width: 767px),
           screen and (max-width: 766px) {
           height: 100%;
         }
       }
+    }
+
+    .button-wrapper {
+      align-self: center;
+      justify-self: flex-end;
     }
 
     ul {

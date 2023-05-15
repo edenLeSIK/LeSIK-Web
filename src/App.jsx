@@ -11,11 +11,11 @@ import LeSik from "./pages/LeSik";
 import * as theme from "./theme";
 import GlobalStyle from "./GlobalStyle";
 
-function App() {
+const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      {!location.pathname === "/makeat" && <Header />}
+      {location.pathname !== "/makeat" && <Header />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/customer" element={<Customer />} />
@@ -24,9 +24,9 @@ function App() {
         <Route path="/makeat" element={<Makeat />} />
         <Route path="/inquiry" element={<Inquiry />} />
       </Routes>
-      {!location.pathname === "/makeat" && <Footer />}
+      {location.pathname !== "/makeat" && <Footer />}
     </ThemeProvider>
   );
-}
+};
 
 export default App;

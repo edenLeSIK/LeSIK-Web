@@ -9,51 +9,53 @@ const Footer = () => {
   const navigateToMakeatPage = () => navigate("/makeat");
 
   return (
-    <FooterContainer>
-      <div className="info">
-        <div className="row">
-          <address className="address">
-            <strong className="company">주식회사 래식</strong>
-            <p>사업자 등록번호 : 452-88-01682 | 대표 : 김한성</p>
-            <p>
-              호스팅 서비스 : 주식회사 래식 |&nbsp;
-              <span>통신판매업 신고번호 : 2022-대전유성-0960 &nbsp;</span>
-              <a
-                href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=4528801682"
-                target="_blank"
-              >
-                사업자정보확인
+    !(location.pathname === "/makeat") && (
+      <FooterContainer>
+        <div className="info">
+          <div className="row">
+            <address className="address">
+              <strong className="company">주식회사 래식</strong>
+              <p>사업자 등록번호 : 452-88-01682 | 대표 : 김한성</p>
+              <p>
+                호스팅 서비스 : 주식회사 래식 |&nbsp;
+                <span>통신판매업 신고번호 : 2022-대전유성-0960 &nbsp;</span>
+                <a
+                  href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=4528801682"
+                  target="_blank"
+                >
+                  사업자정보확인
+                </a>
+              </p>
+              <p>34002 대전광역시 유성구 과학나래2길 1 201-1호</p>
+            </address>
+            <div className="button-wrapper">
+              <Button
+                color="pink"
+                text="makeat 구매하기"
+                onClick={navigateToMakeatPage}
+              />
+            </div>
+          </div>
+          <Link to="/" className="logo">
+            <img alt="logo" src={logo} />
+          </Link>
+          <div className="legal">
+            <p>Copyright © LeSIK. All Rights Reserved.</p>
+            <div className="legal-pages">
+              <a>
+                <p>개인정보 처리방침</p>
               </a>
-            </p>
-            <p>34002 대전광역시 유성구 과학나래2길 1 201-1호</p>
-          </address>
-          <div className="button-wrapper">
-            <Button
-              color="pink"
-              text="makeat 구매하기"
-              onClick={navigateToMakeatPage}
-            />
+              <a>
+                <p>개인정보 처리방침</p>
+              </a>
+              <a>
+                <p>개인정보 처리방침</p>
+              </a>
+            </div>
           </div>
         </div>
-        <Link to="/" className="logo">
-          <img alt="logo" src={logo} />
-        </Link>
-        <div className="legal">
-          <p>Copyright © LeSIK. All Rights Reserved.</p>
-          <div className="legal-pages">
-            <a>
-              <p>개인정보 처리방침</p>
-            </a>
-            <a>
-              <p>개인정보 처리방침</p>
-            </a>
-            <a>
-              <p>개인정보 처리방침</p>
-            </a>
-          </div>
-        </div>
-      </div>
-    </FooterContainer>
+      </FooterContainer>
+    )
   );
 };
 

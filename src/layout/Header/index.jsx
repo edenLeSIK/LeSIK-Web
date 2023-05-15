@@ -4,8 +4,7 @@ import styled from "styled-components";
 import Button from "../../components/Button";
 import HeaderModal from "./HeaderModal";
 import logo from "../../assets/cooksup_logo.png";
-import { CgMenuRound, CgCloseO, CgCloseR } from "react-icons/cg";
-import { GiHamburger } from "react-icons/gi";
+import { CgCloseO } from "react-icons/cg";
 import { FaHamburger } from "react-icons/fa";
 import { black, white, darkGray } from "../../theme";
 
@@ -41,34 +40,40 @@ const Header = () => {
     isScrollPastInnerHeight && !isHeaderModal ? `${darkGray}` : `${white}`;
 
   return (
-    <>
-      <HeaderContainer
-        backgroundColor={backgroundColor}
-        iconColor={iconColor}
-        fontColor={fontColor}
-        boxShadow={boxShadow}
-      >
-        <div className="header-wrapper">
-          {isHeaderModal ? (
-            <CgCloseO onClick={handleHeader} className="icon" />
-          ) : (
-            <FaHamburger onClick={handleHeader} />
-          )}
-          <Link to="/" className="link" onClick={() => setIsHeaderModal(false)}>
-            <img alt="logo" src={logo} />
-          </Link>
-          <div className="button-wrapper">
-            <Button
-              color="main"
-              text="구매하기"
-              className="hide-on-mobile"
-              onClick={navigateToMakeatPage}
-            />
+    !(location.pathname === "/makeat") && (
+      <>
+        <HeaderContainer
+          backgroundColor={backgroundColor}
+          iconColor={iconColor}
+          fontColor={fontColor}
+          boxShadow={boxShadow}
+        >
+          <div className="header-wrapper">
+            {isHeaderModal ? (
+              <CgCloseO onClick={handleHeader} className="icon" />
+            ) : (
+              <FaHamburger onClick={handleHeader} />
+            )}
+            <Link
+              to="/"
+              className="link"
+              onClick={() => setIsHeaderModal(false)}
+            >
+              <img alt="logo" src={logo} />
+            </Link>
+            <div className="button-wrapper">
+              <Button
+                color="main"
+                text="구매하기"
+                className="hide-on-mobile"
+                onClick={navigateToMakeatPage}
+              />
+            </div>
           </div>
-        </div>
-      </HeaderContainer>
-      {isHeaderModal && <HeaderModal setIsHeaderModal={setIsHeaderModal} />}
-    </>
+        </HeaderContainer>
+        {isHeaderModal && <HeaderModal setIsHeaderModal={setIsHeaderModal} />}
+      </>
+    )
   );
 };
 

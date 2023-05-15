@@ -15,7 +15,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      {location.pathname !== "/makeat" && <Header />}
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/customer" element={<Customer />} />
@@ -24,7 +24,7 @@ const App = () => {
         <Route path="/makeat" element={<Makeat />} />
         <Route path="/inquiry" element={<Inquiry />} />
       </Routes>
-      {location.pathname !== "/makeat" && <Footer />}
+      <Footer />
     </ThemeProvider>
   );
 };

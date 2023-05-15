@@ -58,7 +58,7 @@ const FranchiseInquiryContainer = styled.main`
 
       @media screen and (max-width: 766px) {
         width: 100%;
-        padding: 48px 5.33vw;
+        padding: 48px 5.33vw 30px;
         text-align: center;
       }
 
@@ -96,10 +96,32 @@ const FranchiseInquiryContainer = styled.main`
     padding-right: 4.44vw;
     background-color: ${contentBackground};
 
+    @media screen and (max-width: 766px) and (max-width: 766px) {
+      padding: 0;
+    }
+
+    @media screen and (max-width: 766px) {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
     .left {
       position: sticky;
       top: 100px;
-      width: 44.45vw;
+      width: 40.45vw;
+
+      @media screen and (max-width: 766px) and (max-width: 766px) {
+        position: relative;
+        top: 0;
+        padding: 0 5.33vw;
+        width: 100%;
+      }
+
+      @media screen and (max-width: 766px) {
+        width: 100%;
+      }
 
       ul {
         padding-top: 48px;
@@ -108,6 +130,11 @@ const FranchiseInquiryContainer = styled.main`
         font-weight: 400;
         line-height: 1.3;
         letter-spacing: -0.01rem;
+
+        @media screen and (max-width: 766px) {
+          padding: 36px 32px 20px;
+          font-size: 1rem;
+        }
 
         li {
           margin-bottom: 24px;
@@ -118,14 +145,31 @@ const FranchiseInquiryContainer = styled.main`
     }
 
     .right {
-      width: 44.45vw;
-      transform: translateY(-40vh);
+      max-width: 550px;
+      transform: translateY(-30vh);
+
+      @media screen and (max-width: 939px) {
+        transform: translateY(-20vh);
+      }
 
       @media screen and (max-width: 766px) and (max-width: 766px) {
         position: relative;
+        width: 100%;
         padding: 0 5.33vw;
         transform: translateY(0%);
         z-index: 0;
+      }
+    }
+    @media screen and (max-width: 766px) and (max-width: 766px) {
+      .right::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        height: 40%;
+        background-color: ${purple};
+        z-index: -1;
       }
     }
   }

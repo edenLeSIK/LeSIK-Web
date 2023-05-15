@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Step from "../Step";
 import Button from "../Button";
 import {
+  noticeList,
   equipmentList,
   foodTypeList,
   kitchenCountList,
@@ -14,6 +15,7 @@ const StageContent = () => {
   const [index, setIndex] = useState(0);
   const [options, setOptions] = useState([]);
   const components = [Step, Step, Step];
+  const CurrentStep = components[index];
 
   useEffect(() => {
     const handleOption = () => {
@@ -46,36 +48,36 @@ const StageContent = () => {
   }, [index]);
 
   const isButtonDisabled = options.every((option) => !option.active);
-
-  const navigateToInquiryPage = () => {
-    navigate("/inquiry");
-  };
+  const navigateToInquiryPage = () => navigate("/inquiry");
 
   const selectOption = (i) => {
     setOptions((prevOptions) => {
-      const newOptions = [...prevOptions];
-      newOptions[i] = { ...newOptions[i], active: !newOptions[i].active };
+      let newOptions = [...prevOptions];
+      if (index === 2) {
+        newOptions = newOptions.map((option, index) => ({
+          ...option,
+          active: index === i,
+        }));
+      } else {
+        newOptions[i] = { ...newOptions[i], active: !newOptions[i].active };
+      }
       return newOptions;
     });
   };
 
-  const handleNext = () => {
+  const handleNext = () =>
     index === 2 ? setIndex(0) : setIndex((prev) => prev + 1);
-  };
-  const handlePrev = () => {
+
+  const handlePrev = () =>
     index === 0 ? setIndex(2) : setIndex((prev) => prev - 1);
-  };
-  const CurrentComponent = components[index];
 
   return (
     <SectionContainer>
       <div className="stage-wrapper">
         <h6>check it out</h6>
         <h2>How do you makeat?</h2>
-        <h5>
-          Select the existing equipment that can be found in your kitchen.
-        </h5>
-        <CurrentComponent options={options} selectOption={selectOption} />
+        <h5>{noticeList[index].notice}</h5>
+        <CurrentStep options={options} selectOption={selectOption} />
       </div>
       <div className="button-wrapper">
         <Button

@@ -8,9 +8,7 @@ import kitchen from "../../assets/kitchen.png";
 
 const Franchise = () => {
   const navigate = useNavigate();
-  const navigateToInquiryPage = () => {
-    navigate("/inquiry");
-  };
+  const navigateToInquiryPage = () => navigate("/inquiry");
 
   return (
     <FranchiseContainer>

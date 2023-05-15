@@ -14,8 +14,10 @@ const Header = () => {
   const [isHeaderModal, setIsHeaderModal] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
 
+  const handleHeader = () => setIsHeaderModal(!isHeaderModal);
   const navigateToMakeatPage = () => {
     navigate("/makeat");
+    setIsHeaderModal(false);
   };
 
   useEffect(() => {
@@ -23,38 +25,25 @@ const Header = () => {
       const position = window.pageYOffset;
       setScrollPosition(position);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const isScrollPastInnerHeight = scrollPosition > window.innerHeight;
   const backgroundColor =
-    scrollPosition > window.innerHeight && !isHeaderModal
-      ? `${white}`
-      : `transparent`;
-
-  const bgColor =
-    scrollPosition > window.innerHeight ? `${white}` : "transparent";
-  const fontColor =
-    scrollPosition > window.innerHeight ? `${black}` : `${white}`;
+    isScrollPastInnerHeight && !isHeaderModal ? `${white}` : `transparent`;
+  const fontColor = isScrollPastInnerHeight ? `${black}` : `${white}`;
   const boxShadow =
-    scrollPosition > window.innerHeight && !isHeaderModal
+    isScrollPastInnerHeight && !isHeaderModal
       ? "0px 5px 10px rgba(0, 0, 0, 0.1)"
       : "none";
   const iconColor =
-    scrollPosition > window.innerHeight && !isHeaderModal
-      ? `${darkGray}`
-      : `${white}`;
-
-  const handleHeader = () => {
-    setIsHeaderModal(!isHeaderModal);
-  };
+    isScrollPastInnerHeight && !isHeaderModal ? `${darkGray}` : `${white}`;
 
   return (
     <>
       <HeaderContainer
         backgroundColor={backgroundColor}
-        bgColor={bgColor}
         iconColor={iconColor}
         fontColor={fontColor}
         boxShadow={boxShadow}
@@ -65,7 +54,7 @@ const Header = () => {
           ) : (
             <FaHamburger onClick={handleHeader} />
           )}
-          <Link to="/" className="link">
+          <Link to="/" className="link" onClick={() => setIsHeaderModal(false)}>
             <img alt="logo" src={logo} />
           </Link>
           <div className="button-wrapper">

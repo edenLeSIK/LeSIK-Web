@@ -26,6 +26,12 @@ export const makeatContentList = [
   },
 ];
 
+export const noticeList = [
+  { id: 1, notice: "당신의 주방에 있는 기존 장비를 선택해주세요" },
+  { id: 2, notice: "이제, 당신의 주방에서 만들 수 있는 음식을 선택하세요" },
+  { id: 3, notice: "마지막으로, 당신의 주방은 몇 곳에 위치하고 있습니까? " },
+];
+
 export const equipmentList = [
   { id: 1, image: "", name: "오븐" },
   { id: 2, image: "", name: "화덕" },
@@ -44,7 +50,7 @@ export const foodTypeList = [
   { id: 5, image: "", name: "튀김 요리" },
   { id: 6, image: "", name: "바베큐" },
   { id: 7, image: "", name: "피자" },
-  // { id: 8, image: "", name: "브런치" },
+  { id: 8, image: "", name: "브런치" },
   { id: 9, image: "", name: "카페" },
   // { id: 10, image: "", name: "베이커리" },
   // { id: 11, image: "", name: "음료 / 주류" },

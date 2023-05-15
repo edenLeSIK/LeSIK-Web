@@ -1,14 +1,12 @@
 import styled from "styled-components";
-import MainContent from "../../components/MainContent";
-import Banner from "../../components/FigureBanner";
-import SubContent from "../../components/SubContent";
-import AppGuide from "../../components/AppGuide";
-import kitchen from "../../assets/kitchen.png";
+import MakeatPc from "../../components/MakeatPc";
+import MakeatMobile from "../../components/MakeatMobile";
 
 const Makeat = () => {
   return (
     <MakeatContainer>
-      <AppGuide />
+      <MakeatPc />
+      <MakeatMobile />
     </MakeatContainer>
   );
 };

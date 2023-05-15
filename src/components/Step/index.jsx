@@ -1,7 +1,5 @@
-import { useState } from "react";
 import styled from "styled-components";
 import { purple, lightPurple } from "../../theme";
-import Button from "../Button";
 import fridge from "../../assets/fridge.png";
 
 const Step = ({ options, selectOption }) => {

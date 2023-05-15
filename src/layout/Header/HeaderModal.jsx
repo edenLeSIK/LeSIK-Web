@@ -1,11 +1,17 @@
 import { useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { navList } from "../../constants/nav";
 import { gray, main, white } from "../../theme";
 import Button from "../../components/Button";
 
 const HeaderModal = ({ setIsHeaderModal }) => {
+  const navigate = useNavigate();
+  const navigateToMakeatPage = () => {
+    navigate("/makeat");
+    setIsHeaderModal(false);
+  };
+
   useEffect(() => {
     const handleScroll = (event) => {
       event.preventDefault();
@@ -33,7 +39,14 @@ const HeaderModal = ({ setIsHeaderModal }) => {
       <div className="copyright">
         <p>Copyright © LeSIK. All Rights Reserved.</p>
       </div>
-      <Button color="main" text="makeat 구매하기" className="only-on-mobile" />
+      <div className="button-wrapper">
+        <Button
+          color="main"
+          text="makeat 구매하기"
+          className="only-on-mobile"
+          onClick={navigateToMakeatPage}
+        />
+      </div>
     </HeaderModalContainer>
   );
 };
@@ -102,6 +115,15 @@ const HeaderModalContainer = styled.div`
       screen and (max-width: 766px) {
       margin-left: 5px;
       font-size: 0.5rem;
+    }
+  }
+  .button-wrapper {
+    display: none;
+
+    @media screen and (max-width: 939px) and (min-width: 767px),
+      screen and (max-width: 766px) {
+      display: block;
+      width: 160px;
     }
   }
 `;

@@ -93,12 +93,8 @@ const SectionContainer = styled.section`
 
     .button-wrapper {
       display: flex;
-      width: 250px;
+      width: 200px;
       margin-top: 10%;
-
-      .download-button {
-        width: 200px;
-      }
 
       img + img {
         margin-left: 50px;

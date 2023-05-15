@@ -30,6 +30,7 @@ const ButtonContainer = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
   min-width: 150px;
   padding: 15px 20px;
   font-size: 1rem;

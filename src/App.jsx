@@ -15,16 +15,16 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Header />
+      {!location.pathname === "/makeat" && <Header />}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/makeat" element={<Makeat />} />
         <Route path="/customer" element={<Customer />} />
         <Route path="/franchise" element={<Franchise />} />
         <Route path="/lesik" element={<LeSik />} />
+        <Route path="/makeat" element={<Makeat />} />
         <Route path="/inquiry" element={<Inquiry />} />
       </Routes>
-      <Footer />
+      {!location.pathname === "/makeat" && <Footer />}
     </ThemeProvider>
   );
 }

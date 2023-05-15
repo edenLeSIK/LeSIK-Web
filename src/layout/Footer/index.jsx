@@ -1,9 +1,13 @@
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../../assets/cooksup_logo.png";
 import { gray, purple, white, yellow } from "../../theme";
 import Button from "../../components/Button";
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const navigateToMakeatPage = () => navigate("/makeat");
+
   return (
     <FooterContainer>
       <div className="info">
@@ -24,12 +28,16 @@ const Footer = () => {
             <p>34002 대전광역시 유성구 과학나래2길 1 201-1호</p>
           </address>
           <div className="button-wrapper">
-            <Button color="pink" text="makeat 구매하기" />
+            <Button
+              color="pink"
+              text="makeat 구매하기"
+              onClick={navigateToMakeatPage}
+            />
           </div>
         </div>
-        <div className="logo">
+        <Link to="/" className="logo">
           <img alt="logo" src={logo} />
-        </div>
+        </Link>
         <div className="legal">
           <p>Copyright © LeSIK. All Rights Reserved.</p>
           <div className="legal-pages">
@@ -100,16 +108,32 @@ const FooterContainer = styled.footer`
       }
     }
 
+    .button-wrapper {
+      max-width: 160px;
+    }
+
     .logo {
+      display: block;
+      width: 21.115vw;
+      padding: 0 0 16px;
       margin-top: 7rem;
 
       @media screen and (max-width: 939px) and (min-width: 767px),
         screen and (max-width: 766px) {
+        display: flex;
+        justify-content: center;
+        width: 100%;
         margin-top: 3rem;
       }
 
       img {
         height: 90px;
+
+        @media screen and (max-width: 939px) and (min-width: 767px),
+          screen and (max-width: 766px) {
+          width: 90vw;
+          height: auto;
+        }
       }
     }
 

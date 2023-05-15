@@ -6,9 +6,7 @@ import { orange, white } from "../../theme";
 const AdsContent = () => {
   const navigate = useNavigate();
 
-  const navigateToInquiryPage = () => {
-    navigate("/inquiry");
-  };
+  const navigateToInquiryPage = () => navigate("/inquiry");
 
   return (
     <ContentContainer>
@@ -16,11 +14,13 @@ const AdsContent = () => {
         <h2 className="headline">
           Ready <br /> to Makeat?
         </h2>
-        <Button
-          text="바로 참여하기"
-          color="yellow"
-          onClick={navigateToInquiryPage}
-        />
+        <div className="button-wrapper">
+          <Button
+            text="바로 참여하기"
+            color="yellow"
+            onClick={navigateToInquiryPage}
+          />
+        </div>
       </div>
     </ContentContainer>
   );
@@ -71,6 +71,10 @@ const ContentContainer = styled.section`
         font-size: 2.5rem;
       }
     }
+  }
+
+  .button-wrapper {
+    width: 160px;
   }
 `;
 

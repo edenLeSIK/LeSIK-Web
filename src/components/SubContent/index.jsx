@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Button from "../Button";
 import { purple, contentBackground } from "../../theme";
 
-let a = [
+let list = [
   {
     headline: "Create Your Perfect makeat",
     text: "당신의 건강한 식단을 책임질게요 당신의 건강한 식단을 책임질게요당신의 건강한 식단을 책임질게요",
@@ -33,17 +33,19 @@ const SubContent = ({ color, label, headline, text, onClick }) => {
             knkandknkadmk fmdkfkdn kdkndknknk naknkandknkadmkf mdkfkdnkdkndk
             nknknaknkandknk admkfmdkfkdnkdkndknknknaknk andknka
           </h5>
-          {text && (
-            <Button
-              color="purple"
-              text={text}
-              onClick={onClick}
-              className="hide-on-mobile"
-            />
-          )}
+          <div className="button-wrapper">
+            {text && (
+              <Button
+                color="purple"
+                text={text}
+                onClick={onClick}
+                className="hide-on-mobile"
+              />
+            )}
+          </div>
         </div>
         <div className="content-wrapper">
-          {a.map((content) => (
+          {list.map((content) => (
             <div className="content-item" key={content.headline}>
               <h3 className="sub-headline">{content.headline}</h3>
               <p className="text">{content.text}</p>
@@ -51,7 +53,7 @@ const SubContent = ({ color, label, headline, text, onClick }) => {
           ))}
         </div>
       </div>
-      <div className="button-wrapper">
+      <div className="button-wrapper mobile-button">
         {text && (
           <Button
             color="purple"
@@ -98,6 +100,7 @@ const SectionContainer = styled.section`
     align-items: flex-start;
     -webkit-justify-content: space-between;
     justify-content: space-between;
+    /* margin-bottom: 30px; */
 
     @media screen and (max-width: 939px) and (min-width: 767px),
       screen and (max-width: 766px) {
@@ -217,9 +220,12 @@ const SectionContainer = styled.section`
     }
   }
 
+  .mobile-button {
+    margin: 0 auto;
+  }
+
   .button-wrapper {
-    display: flex;
-    justify-content: center;
+    max-width: 200px;
     margin-top: 30px;
   }
 `;

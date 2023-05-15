@@ -1,6 +1,15 @@
 import styled from "styled-components";
 import Button from "../Button";
-import { red, white } from "../../theme";
+import { fontColor, red, white } from "../../theme";
+
+const list = [
+  { id: 1, label: "이름", mark: true },
+  { id: 2, label: "전화번호", mark: true },
+  { id: 3, label: "이메일", mark: true },
+  { id: 4, label: "문의사항", mark: true },
+  { id: 5, label: "가맹점 이름", mark: true },
+  { id: 6, label: "가맹점 주소", mark: false },
+];
 
 const Form = () => {
   return (
@@ -9,44 +18,20 @@ const Form = () => {
         <p className="text">
           <span>﹡</span> 필수 항목을 모두 작성해주세요
         </p>
-        <div className="input-wrapper">
-          <label>
-            이름 <span>﹡</span>
-          </label>
-          <input type="text" />
-        </div>
-        <div className="input-wrapper">
-          <label>
-            전화번호 <span>﹡</span>
-          </label>
-          <input type="text" />
-        </div>
-        <div className="input-wrapper">
-          <label>
-            이메일 <span>﹡</span>
-          </label>
-          <input type="email" />
-        </div>
-        <div className="input-wrapper">
-          <label>
-            문의사항 <span>﹡</span>
-          </label>
-          <textarea type="text" />
-        </div>
-        <div className="input-wrapper">
-          <strong>가맹점 정보</strong>
-        </div>
-        <div className="input-wrapper">
-          <label>
-            가맹점 이름 <span>﹡</span>
-          </label>
-          <input type="text" />
-        </div>
-        <div className="input-wrapper">
-          <label>가맹점 주소</label>
-          <input type="text" />
-        </div>
-        <div className="input-wrapper">
+        {list.map((el) => (
+          <div className="input-wrapper" key={el.id}>
+            {el.id === 5 && (
+              <div className="input-wrapper">
+                <p className="sort">가맹점 정보</p>
+              </div>
+            )}
+            <label>
+              {el.label} {el.mark && <span>﹡</span>}
+            </label>
+            <input type="text" />
+          </div>
+        ))}
+        {/* <div className="input-wrapper">
           <label>선택사항</label>
           <select>
             <option>선택해주세요</option>
@@ -55,7 +40,7 @@ const Form = () => {
             <option>customer</option>
             <option>operator</option>
           </select>
-        </div>
+        </div> */}
         <div className="button-wrapper">
           <Button text="제출하기" color="yellow" />
         </div>
@@ -66,10 +51,16 @@ const Form = () => {
 
 const FormContainer = styled.div`
   width: 38.8916666667vw;
+  /* margin-right: 4.44vw; */
   padding: 40px 32px;
-  margin-right: 4.44vw;
   background: ${white};
   border-radius: 24px;
+
+  @media screen and (max-width: 766px) {
+    width: 100%;
+    margin: 0 5.33vw 0 0;
+    padding: 32px 24px;
+  }
 
   form {
     max-width: 768px;
@@ -77,7 +68,7 @@ const FormContainer = styled.div`
 
     .text {
       margin: 16px 0;
-      color: #20202b;
+      color: ${fontColor};
       font-size: 0.7777777778rem;
     }
 
@@ -89,14 +80,21 @@ const FormContainer = styled.div`
       width: 100%;
       padding: 10px 0;
 
-      strong {
-        font-weight: bolder;
+      @media (max-width: 767px) {
+        display: inline-block;
+        width: 100%;
+        padding: 5px 0;
+      }
+
+      .sort {
+        margin-bottom: 12px;
+        font-size: 1.125rem;
       }
 
       label {
         display: block;
         margin-bottom: 8px;
-        color: #20202b;
+        color: ${fontColor};
         font-size: 0.8888888889rem;
         font-weight: 400;
       }
@@ -111,7 +109,7 @@ const FormContainer = styled.div`
         background-color: ${white};
         border: 1px solid #9797a1;
         border-radius: 8px;
-        color: #20202b;
+        color: ${fontColor};
         font-weight: 400;
       }
 
@@ -121,6 +119,7 @@ const FormContainer = styled.div`
     }
 
     .button-wrapper {
+      width: 100%;
       margin-top: 20px;
     }
   }

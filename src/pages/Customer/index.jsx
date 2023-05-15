@@ -7,10 +7,7 @@ import food from "../../assets/food3.png";
 
 const Customer = () => {
   const navigate = useNavigate();
-
-  const navigateToMakeatPage = () => {
-    navigate("/makeat");
-  };
+  const navigateToMakeatPage = () => navigate("/makeat");
 
   return (
     <CustomerContainer>
@@ -28,7 +25,6 @@ const Customer = () => {
       />
       <SubContent label="you all makeat" headline="ddd" />
       <SubContent color="on" label="you all makeat" headline="ddd" />
-      <AppGuide />
     </CustomerContainer>
   );
 };

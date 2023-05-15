@@ -2,23 +2,14 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import MainContent from "../../components/MainContent";
 import SubContent from "../../components/SubContent";
-import Feed from "../../components/Feed";
 import AdsContent from "../../components/AdsContent";
-import consult from "../../assets/consult.png";
 import food from "../../assets/food2.png";
 
 const Home = () => {
   const navigate = useNavigate();
-
-  const navigateToMakeatPage = () => {
-    navigate("/makeat");
-  };
-  const navigateToCustomerPage = () => {
-    navigate("/customer");
-  };
-  const navigateToFranchisePage = () => {
-    navigate("/franchise");
-  };
+  const navigateToMakeatPage = () => navigate("/makeat");
+  const navigateToCustomerPage = () => navigate("/customer");
+  const navigateToFranchisePage = () => navigate("/franchise");
 
   return (
     <HomeContainer>

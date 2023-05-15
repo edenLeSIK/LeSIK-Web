@@ -1,18 +1,35 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { BsSearch } from "react-icons/bs";
 import { fontColor, gray, main, pinkHover, white } from "../../theme";
 import google from "../../assets/google-play-badge.png";
 
 const MakeatPc = () => {
+  const navigate = useNavigate();
+  const [search, setSearch] = useState("");
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    navigate(`?search=${search}`);
+  };
+
+  const handleQuery = (e) => {
+    setSearch(e.target.value);
+  };
+
   return (
     <MakeatPcContainer>
       <div className="main">
         <Link to="/" className="link">
           당신에게 딱 맞춘 건강식단<span className="makeat">메이킷</span>
         </Link>
-        <form className="search-wrapper">
-          <input placeholder="검색어를 입력하세요." />
+        <form className="search-wrapper" onSubmit={onSubmit}>
+          <input
+            placeholder="검색어를 입력하세요."
+            value={search}
+            onChange={handleQuery}
+          />
           <button type="submit">
             <div className="positioner">
               <span className="icon">

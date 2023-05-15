@@ -92,18 +92,17 @@ const MakeatPcContainer = styled.section`
       input {
         display: block;
         width: 100%;
-        height: 47px;
+        height: 48px;
         padding: 0 55px 0 18px;
         border-radius: 23px;
         border: 1px solid #e5e5e5;
         background-color: #f7f7f7;
-        box-sizing: border-box;
         font-size: 16px;
       }
 
       button {
         position: absolute;
-        top: 0;
+        top: 0px;
         right: 5px;
         height: 100%;
         padding: 0;

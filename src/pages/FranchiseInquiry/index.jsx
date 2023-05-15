@@ -145,7 +145,7 @@ const FranchiseInquiryContainer = styled.main`
     }
 
     .right {
-      max-width: 550px;
+      width: 40vw;
       transform: translateY(-30vh);
 
       @media screen and (max-width: 939px) {

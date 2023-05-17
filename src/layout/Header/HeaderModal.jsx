@@ -36,9 +36,6 @@ const HeaderModal = ({ setIsHeaderModal }) => {
           ))}
         </ul>
       </div>
-      <div className="copyright">
-        <p>Copyright © LeSIK. All Rights Reserved.</p>
-      </div>
       <div className="button-wrapper">
         <Button
           color="main"
@@ -46,6 +43,9 @@ const HeaderModal = ({ setIsHeaderModal }) => {
           className="only-on-mobile"
           onClick={navigateToMakeatPage}
         />
+      </div>
+      <div className="copyright">
+        <p>Copyright © LeSIK. All Rights Reserved.</p>
       </div>
     </HeaderModalContainer>
   );

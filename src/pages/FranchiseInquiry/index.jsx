@@ -160,6 +160,7 @@ const FranchiseInquiryContainer = styled.main`
         z-index: 0;
       }
     }
+
     @media screen and (max-width: 766px) and (max-width: 766px) {
       .right::after {
         content: "";

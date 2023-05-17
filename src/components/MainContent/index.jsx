@@ -93,7 +93,7 @@ const SectionContainer = styled.section`
 
     .button-wrapper {
       display: flex;
-      width: 200px;
+      width: 160px;
       margin-top: 10%;
 
       img + img {

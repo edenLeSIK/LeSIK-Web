@@ -85,7 +85,7 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 20px 4.44vw;
+  padding: 15px 4.44vw;
   background-color: ${(props) => props.backgroundColor};
   transition: background-color 0.2s ease;
   z-index: 50;

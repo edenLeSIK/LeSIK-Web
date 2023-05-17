@@ -33,7 +33,7 @@ const SubContent = ({ color, label, headline, text, onClick }) => {
             knkandknkadmk fmdkfkdn kdkndknknk naknkandknkadmkf mdkfkdnkdkndk
             nknknaknkandknk admkfmdkfkdnkdkndknknknaknk andknka
           </h5>
-          <div className="button-wrapper">
+          <div className="button-wrapper web">
             {text && (
               <Button
                 color="purple"
@@ -100,7 +100,6 @@ const SectionContainer = styled.section`
     align-items: flex-start;
     -webkit-justify-content: space-between;
     justify-content: space-between;
-    /* margin-bottom: 30px; */
 
     @media screen and (max-width: 939px) and (min-width: 767px),
       screen and (max-width: 766px) {
@@ -227,6 +226,13 @@ const SectionContainer = styled.section`
   .button-wrapper {
     max-width: 200px;
     margin-top: 30px;
+  }
+
+  .web {
+    @media screen and (max-width: 939px) and (min-width: 767px),
+      screen and (max-width: 766px) {
+      display: none;
+    }
   }
 `;
 
